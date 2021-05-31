@@ -10,7 +10,7 @@ class AntiExe(commands.Cog):
     async def on_message(self, ctx):
         x = ctx.attachments
         for i in x:
-            if i.content_type == "application/x-msdos-program":
+            if i.content_type == "application/x-msdos-program" or i.content_type == "application/rar":
                 await ctx.delete()
                 try:
                     await ctx.guild.ban(ctx.author, reason="anti exe file")
